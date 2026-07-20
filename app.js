@@ -54,6 +54,28 @@
     return a;
   }
 
+  function questionKey(catId, diff, q) {
+    return catId + '|' + diff + '|' + q.q;
+  }
+
+  function loadSeen() {
+    try {
+      return new Set(JSON.parse(localStorage.getItem('feriequiz_seen')) || []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function saveSeen(seen) {
+    localStorage.setItem('feriequiz_seen', JSON.stringify([...seen]));
+  }
+
+  function markSeen(round) {
+    const seen = loadSeen();
+    round.forEach((q) => seen.add(q._key));
+    saveSeen(seen);
+  }
+
   function pickQuestions(catId, difficulty, count) {
     let pool = [];
     const diffs = difficulty === 'bland' ? ['nem', 'mellem', 'svaer'] : [difficulty];
@@ -61,19 +83,29 @@
     catIds.forEach((cid) => {
       const bank = QUESTIONS[cid];
       diffs.forEach((d) => {
-        bank[d].forEach((q) => pool.push(Object.assign({}, q, { _diff: d, _srcCat: cid })));
+        bank[d].forEach((q) => pool.push(Object.assign({}, q, { _diff: d, _srcCat: cid, _key: questionKey(cid, d, q) })));
       });
     });
-    pool = shuffle(pool);
+
+    const seen = loadSeen();
+    let unseen = pool.filter((q) => !seen.has(q._key));
+    if (unseen.length < count) {
+      // This pool is exhausted (or nearly) — cycle back to a fresh lap instead of forcing repeats early.
+      pool.forEach((q) => seen.delete(q._key));
+      saveSeen(seen);
+      unseen = pool.slice();
+    }
+    const seenPortion = pool.filter((q) => !unseen.includes(q));
+
+    let ordered = shuffle(unseen).concat(shuffle(seenPortion));
     const result = [];
     let i = 0;
-    let lastBatch = null;
     while (result.length < count) {
-      if (i >= pool.length) {
-        pool = shuffle(pool);
+      if (i >= ordered.length) {
+        ordered = shuffle(ordered);
         i = 0;
       }
-      result.push(pool[i]);
+      result.push(ordered[i]);
       i++;
     }
     return result.slice(0, count);
@@ -469,6 +501,7 @@
           q._shuffled = shuffle(q.options);
           return q;
         });
+        markSeen(state.round);
         state.players.forEach((p) => (p.score = 0));
         state.qIndex = 0;
         state.turnIndex = 0;
