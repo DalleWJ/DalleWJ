@@ -1,4 +1,4 @@
-const CACHE_NAME = 'feriequiz-v2';
+const CACHE_NAME = 'feriequiz-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -13,34 +13,6 @@ const ASSETS = [
   './icons/apple-touch-icon.png',
   './icons/favicon-32.png',
   './icons/favicon-16.png',
-  './images/cactus.png',
-  './images/camping.png',
-  './images/cowboy-hat-face.png',
-  './images/curling-stone.png',
-  './images/droplet.png',
-  './images/eiffel-tower.png',
-  './images/flag-france.svg',
-  './images/flag-italy.svg',
-  './images/flag-japan.svg',
-  './images/flag-tanzania.svg',
-  './images/flag-thailand.svg',
-  './images/golf-flag.png',
-  './images/guitar.png',
-  './images/herb.png',
-  './images/kitchen-knife.png',
-  './images/koala.png',
-  './images/lion.png',
-  './images/penguin.png',
-  './images/pineapple.png',
-  './images/rainbow.png',
-  './images/saxophone.png',
-  './images/shark.png',
-  './images/snow-mountain.png',
-  './images/snowboard.png',
-  './images/snowflake.png',
-  './images/spaghetti.png',
-  './images/volcano.png',
-  './images/water-wave.png',
 ];
 
 self.addEventListener('install', (event) => {

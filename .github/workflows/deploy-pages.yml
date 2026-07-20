@@ -35,7 +35,6 @@ jobs:
           cp index.html style.css app.js data.js manifest.webmanifest sw.js _site/
           cp -r fonts _site/fonts
           cp -r icons _site/icons
-          cp -r images _site/images
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

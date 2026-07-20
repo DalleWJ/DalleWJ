@@ -256,7 +256,6 @@
 
         <div class="question-card card">
           <span class="q-badge" style="background:${cat.color}">${cat.emoji} ${cat.name} · ${meta.label}</span>
-          ${q.img ? `<div class="q-visual">${q.img.map((src) => `<img src="${src}" alt="" class="q-visual-img${src.includes('flag-') ? ' is-flag' : ''}" />`).join('')}</div>` : ''}
           <div class="q-text">${escapeHtml(q.q)}</div>
           <div class="options">${optionsHtml}</div>
         </div>
