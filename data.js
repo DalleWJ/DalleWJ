@@ -9,6 +9,7 @@ const CATEGORIES = [
   { id: 'dyr',      name: 'Dyr & Natur',    emoji: '🐬', color: '#4CB963' },
   { id: 'sport',    name: 'Sport & Leg',    emoji: '🏐', color: '#3AA6FF' },
   { id: 'alment',   name: 'Alment & Sjov',  emoji: '🧠', color: '#FFD23F' },
+  { id: 'influencer', name: 'Influencere & TikTok', emoji: '🤳', color: '#FF2E93' },
 ];
 
 const QUESTIONS = {
@@ -194,6 +195,29 @@ const QUESTIONS = {
       { q: "Hvor mange kromosomer har en normal menneskelig kropscelle?", options: ["46", "23", "44", "48"], correct: "46", fact: "Det svarer til 23 par, ét fra hver forælder." },
       { q: "Hvilken trykenhed er opkaldt efter den italienske fysiker Evangelista Torricelli?", options: ["Torr", "Pascal", "Bar", "Atmosfære"], correct: "Torr", fact: "760 torr svarer til normalt lufttryk ved havoverfladen." },
       { q: "Hvad hedder tallet, der angiver forholdet mellem en cirkels omkreds og diameter (ca. 3,14159)?", options: ["Pi (π)", "Phi (φ)", "Eulers tal (e)", "Tau (τ)"], correct: "Pi (π)", fact: "Tallet har uendeligt mange decimaler uden gentaget mønster." },
+    ],
+  },
+  influencer: {
+    nem: [
+      { q: "Hvilket realityprogram blev Fie Laursen oprindeligt kendt fra, før hun blev en af Danmarks største influencere?", options: ["Ex on the Beach Danmark", "Paradise Hotel", "Bachelor", "Big Brother"], correct: "Ex on the Beach Danmark", fact: "Fie Laursen er i dag en af de mest fulgte danskere på Instagram og TikTok." },
+      { q: "Hvilken platform er YouTuberen Anders Hemmingsen primært kendt for at lave indhold til?", options: ["YouTube", "LinkedIn", "Twitch", "Pinterest"], correct: "YouTube", fact: "Han er en af Danmarks mest abonnerede YouTubere." },
+      { q: "Hvilket TV-program med professionelle dansere gjorde Silas Holst berømt?", options: ["Vild med Dans", "X Factor", "Voice", "Paradise Hotel"], correct: "Vild med Dans", fact: "Vild med Dans er den danske udgave af det internationale dansekoncept 'Dancing with the Stars'." },
+      { q: "Hvilken dansk sanger, kendt for hittet 'Told You So', er også meget populær på Instagram blandt unge?", options: ["Christopher", "Rasmus Seebach", "Basim", "Lukas Graham"], correct: "Christopher", fact: "Christopher har haft flere hits på den danske hitliste." },
+      { q: "Hvad kaldes de korte, ofte dans- eller humorrelaterede videoer på appen, der har gjort mange unge kendte de seneste år?", options: ["TikToks", "Podcasts", "Blogindlæg", "Webinarer"], correct: "TikToks", fact: "TikTok lancerede sin internationale version i 2018." },
+    ],
+    mellem: [
+      { q: "Fie Laursen er kendt for at være meget åben omkring hvilket emne på sine sociale medier?", options: ["Mental sundhed og sårbarhed", "Aktieinvestering", "Klimaforandringer", "Boligmarkedet"], correct: "Mental sundhed og sårbarhed", fact: "Hendes åbenhed har gjort hende til en vigtig stemme for mange unge." },
+      { q: "Hvilken type indhold er YouTuberen Gustav Salinas særligt kendt for at producere med høj produktionsværdi?", options: ["Store overraskelser og gavevideoer", "Madlavningstutorials", "Boganmeldelser", "Nyhedsanalyser"], correct: "Store overraskelser og gavevideoer", fact: "Den slags videoer kan ofte samle millioner af visninger." },
+      { q: "Hvad kaldes det, når en influencer får betalt for at fremvise et produkt i sit indhold?", options: ["Sponsoreret indhold/reklamesamarbejde", "Et interview", "En uafhængig anmeldelse", "Et stipendie"], correct: "Sponsoreret indhold/reklamesamarbejde", fact: "I Danmark skal den slags indhold ifølge loven markeres tydeligt som reklame." },
+      { q: "Albert Dyrlund er en del af en gruppe danske YouTubere, der ofte laver videoer sammen med hvilken type indhold?", options: ["Udfordringer og pranks", "Politiske debatter", "Videnskabsformidling", "Historiedokumentarer"], correct: "Udfordringer og pranks", fact: "Samarbejder mellem YouTubere er en klassisk måde at nå nye følgere på." },
+      { q: "Hvad er det danske ord for en person, der professionelt laver og deler indhold om sit liv på sociale medier?", options: ["Influencer/indholdsskaber", "Journalist", "Manuskriptforfatter", "Fotoredaktør"], correct: "Influencer/indholdsskaber", fact: "Mange unge danskere drømmer i dag om at blive influencer som levevej." },
+    ],
+    svaer: [
+      { q: "I hvilken by er de fleste af Danmarks største YouTubere og influencere typisk baseret?", options: ["København", "Aarhus", "Odense", "Aalborg"], correct: "København", fact: "Mange danske content-agenturer og produktionsselskaber ligger også i hovedstaden." },
+      { q: "Cirka hvor mange følgere skal en influencer typisk have for at blive regnet som 'mikroinfluencer'?", options: ["Ca. 10.000-100.000", "Ca. 1-10 millioner", "Ca. 100-1.000", "Ca. 10-50"], correct: "Ca. 10.000-100.000", fact: "Mikroinfluencere har ofte et tættere forhold til deres følgere end de allerstørste profiler." },
+      { q: "Hvilken dansk YouTuber er kendt for vlogs med høj produktionsværdi, ofte med partner og familie som en del af indholdet?", options: ["Gustav Salinas", "Anders Hemmingsen", "Albert Dyrlund", "Christopher"], correct: "Gustav Salinas", fact: "Den slags familievenlige vlogs er populære på tværs af landegrænser." },
+      { q: "Hvad kaldes det, når et opslag eller en video spredes ekstremt hurtigt og bliver set af enormt mange mennesker på kort tid?", options: ["At gå viralt", "At blive verificeret", "At blive shadowbanned", "At blive monetariseret"], correct: "At gå viralt", fact: "Algoritmerne på platforme som TikTok gør det nemmere for ukendte skabere at gå viralt end på ældre platforme." },
+      { q: "Hvad kaldes de virksomheder, der typisk matcher influencere med brands, som ønsker reklamesamarbejder?", options: ["Influencer-/talentbureauer", "Revisionsfirmaer", "Forsikringsselskaber", "Fagforeninger"], correct: "Influencer-/talentbureauer", fact: "Nogle af Danmarks største influencere har deres eget bureau eller er tilknyttet et managementselskab." },
     ],
   },
 };
