@@ -10,6 +10,7 @@ const CATEGORIES = [
   { id: 'sport',    name: 'Sport & Leg',    emoji: '🏐', color: '#3AA6FF' },
   { id: 'alment',   name: 'Alment & Sjov',  emoji: '🧠', color: '#FFD23F' },
   { id: 'influencer', name: 'Influencere & TikTok', emoji: '🤳', color: '#FF2E93' },
+  { id: 'mix',        name: 'Alt Blandet',          emoji: '🎲', color: '#845EF7' },
 ];
 
 const QUESTIONS = {

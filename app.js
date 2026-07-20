@@ -56,14 +56,14 @@
 
   function pickQuestions(catId, difficulty, count) {
     let pool = [];
-    const bank = QUESTIONS[catId];
-    if (difficulty === 'bland') {
-      ['nem', 'mellem', 'svaer'].forEach((d) => {
-        bank[d].forEach((q) => pool.push(Object.assign({}, q, { _diff: d })));
+    const diffs = difficulty === 'bland' ? ['nem', 'mellem', 'svaer'] : [difficulty];
+    const catIds = catId === 'mix' ? CATEGORIES.filter((c) => c.id !== 'mix').map((c) => c.id) : [catId];
+    catIds.forEach((cid) => {
+      const bank = QUESTIONS[cid];
+      diffs.forEach((d) => {
+        bank[d].forEach((q) => pool.push(Object.assign({}, q, { _diff: d, _srcCat: cid })));
       });
-    } else {
-      pool = bank[difficulty].map((q) => Object.assign({}, q, { _diff: difficulty }));
-    }
+    });
     pool = shuffle(pool);
     const result = [];
     let i = 0;
@@ -207,7 +207,7 @@
 
   function renderQuiz() {
     const q = state.round[state.qIndex];
-    const cat = CATEGORIES.find((c) => c.id === state.category);
+    const cat = CATEGORIES.find((c) => c.id === q._srcCat);
     const meta = DIFF_META[q._diff];
     const player = state.players[state.turnIndex];
     const total = state.round.length;
